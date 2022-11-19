@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Indian_Banks API</title>
+    <style>
+        *{
+            margin: 25px 13px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <div class="h1">
+        Indian Banks API(Application Programmable Interface)
+    </div>
+    <div class="h2">
+        Documentation of the Indian_Banks API
+    </div>
+    <div class="h2">
+        Main File is where the Flask API is Actually Running and from that page it sends request another module, and get response and return to the Client Website.
+    </div>
+    <div class="h3">
+        Following are the things required to make this flask restful api working in your pc they are.,
+        <ul>
+            <li>
+                Install the Python
+            </li>
+            <li>
+                Install the Flask module
+                (pip install flask) and (pip install flask-restful) for windows and linux
+            </li>
+            <li>
+                Install PostgreSQL on your System and do make required configuration such as port, username, password, database etc.
+                And Run the SQL file present in the indian_banks-main folder.
+            </li>
+        </ul>
+    </div>
+    <div class="h3">
+        After Successfully Installing and making required configuration as mentioned above.
+        <ul>
+            <li>
+                Run App.py
+            </li>
+            <li>
+                Now it will run on localhost or 127.0.0.1:port_number you have mentioned while making configuration
+                After Successfully Running the Application it will run on the default browser or manually selected browser.
+                And Home Page will be about the Documentation of the Application on How to run and so on.
+            </li>
+    
+            Following are the URLs:
+            <li>
+                127.0.0.1:your_port_number/api/v1 -> it is a endpoint which is the homepage of the website.
+            </li>
+            <li>
+                127.0.0.1:your_port_number/api/v1/banks -> it is an endpoint which will give you the bank list.
+            </li>
+            
+            <li>
+                127.0.0.1:your_port_number/api/v1/banks/id -> it is an endpoint which will give you the all branch details of the particular bank id which you get from the bank list.
+                e.g. ABHYUDAYA BANK COOPERATIVE LIMITED:60
+                so id will be 60 it is present in the database 
+                127.0.0.1:your_port_number/api/v1/banks/60
+            </li>
+    
+            <li>
+                127.0.0.1:your_port_number/api/v1/banks/id/branch -> it is an endpoint which will give you the specific/ particular details of the branch.
+                e.g. suppose ABHYUDAYA BANK COOPERATIVE LIMITED has Branch as 'RTGS-HO'
+                127.0.0.1:your_port_number/api/v1/banks/60/RTGS-HO
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
