@@ -2,9 +2,9 @@ import psycopg2
 
 cnn=None
 
-lst=[]
 
 def data():
+    lst=[]
     try:
         cnn=psycopg2.connect(database="banks",
                             host="localhost",
@@ -29,6 +29,3 @@ def data():
     finally:
         if cnn:
             cnn.close()
-
-a=data()
-print(a)

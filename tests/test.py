@@ -1,5 +1,5 @@
 try:
-    from src.__init__ import app
+    from src.setup import app
     import unittest
 
 

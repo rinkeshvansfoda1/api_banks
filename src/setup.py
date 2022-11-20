@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, render_template
-from flask_restful import Api, Resource
+from flask_restful import Api
+from waitress import serve
 
-
+# from .templates import 404
 import sql_bank_postgresql
 import sql_bank_branch
 import sql_bank_detail
@@ -9,7 +10,7 @@ import sql_bank_detail
 app=Flask(__name__)
 api=Api(app)
 
-BASE_URL='/api/v1'
+BASE_URL="/api/v1"
 @app.route(BASE_URL,methods=['GET','POST'])
 def index():
     if request.method=='GET' or request.method=='POST':
@@ -39,8 +40,14 @@ def branch_detail(idd,branchs):
     if request.method=='GET' or request.method=='POST':
         data=sql_bank_detail.data(idd,branchs)
         if len(data)==0:
-            return 'page not found',404
+            return render_template('404.html'),404
         return jsonify(data)
 
+mode='dev'
+
 if __name__=='__main__':
-    app.run(debug=True)
+    if mode=='dev':
+        app.run(debug=True)
+    else:
+        serve(app, host='0.0.0.0', port=50100,url_scheme='/api/v1')
+

@@ -2,8 +2,8 @@ import psycopg2
 
 cnn=None
 
-lst=[]
 def data(id):
+    lst=[]
     try:
         cnn=psycopg2.connect(database="banks",
                             host="localhost",
