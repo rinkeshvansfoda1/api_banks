@@ -1,4 +1,4 @@
-Run _init__.py
+Run setup.py
 Now it will run on localhost or 127.0.0.1:port_number you have mentioned while making configuration
 After Successfully Running the Application it will run on the default browser or manually selected browser.
 127.0.0.1:your_port_number/api/v1 -> it is a endpoint which is the homepage of the website.
